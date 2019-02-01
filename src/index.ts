@@ -1,5 +1,6 @@
-import { Core } from "odi";
-import { join } from "path";
+import "reflect-metadata"
+import { Core } from "odi"
+import { join } from "path"
 
 new Core({
   sources: __dirname,
@@ -11,4 +12,4 @@ new Core({
       prefix: "/assets"
     }
   }
-}).listen(() => console.log("Server successfully started at port 8080"));
+}).listen(() => console.log("Server successfully started at port 8080"))
