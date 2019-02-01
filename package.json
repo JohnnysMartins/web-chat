@@ -4,14 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf build",
-    "build": "tsc",
-    "server": "node build/src/index.js",
-    "watch:build": "tsc --watch",
-    "watch:server": "nodemon './build/src/index.js' --watch './build/src'",
+    "start": "nodemon --watch src/**/*.ts --watch views/**/*.tsx --exec ts-node src/index.ts",
     "dev": "ts-node src/index.ts",
-    "start": "npm-run-all clean build --parallel watch:build watch:server --print-label",
-    "prod": "npm-run-all clean build --parallel server",
+    "prod": "tsc && node build/src/index.js",
     "test": "tsc && mocha build/**/*.spec.js"
   },
   "keywords": [],
