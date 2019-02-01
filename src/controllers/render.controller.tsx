@@ -6,11 +6,15 @@ import HistoryService from '../services/history.service'
 @Controller()
 export default class RenderController extends IController {
 
-    @Autowired()
-    history: HistoryService;
+	@Autowired()
+	history: HistoryService
 
-    @Get index() {
-        return <ChatPage history={this.history.getMessages()}/>;
-    }
+	@Get index() {
+		return <ChatPage history={this.history.getMessages()} />
+	}
+
+	@Get async '{id}'(id: string) {
+		return { message: 'hello world ODI' }
+	}
 
 }
